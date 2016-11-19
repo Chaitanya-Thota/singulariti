@@ -1,0 +1,15 @@
+{% extends 'login/base.html' %}
+
+{% block title %}Hi!{% endblock %}
+
+{% block content %}
+<div class="form">
+  <div id="login">
+    <h1 style="margin-top:10%">You have been successfully logged In.</h1>
+    <ul class="tab-group" style="padding-left:33%">
+      <li class="tab active"><a href="{% url 'logout' %}">Log Out</a></li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}

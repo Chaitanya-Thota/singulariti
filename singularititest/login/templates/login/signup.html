@@ -1,0 +1,48 @@
+{% extends 'login/base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+
+<div class="form">
+  <ul class="tab-group">
+    <li class="tab active"><a href="{% url 'signup' %}">Sign Up</a></li>
+    <li class="tab"><a href="{% url 'login' %}">Log In</a></li>
+  </ul>
+  <div id="login">
+    <h1>Sign Up for Free</h1>
+    <form method="post">
+      <div class="field-wrap">
+        <input type="text" required autocomplete="off"
+            id="username" name="username" maxlength="30" placeholder="User Name*"/>
+      </div>
+
+      <div class="field-wrap">
+      <input type="password"required autocomplete="off"
+          id="password" name="password" maxlength="30" placeholder="Password*"/>
+      </div>
+
+      <div class="field-wrap">
+      <input type="password"required autocomplete="off"
+          id="password1" name="password1" maxlength="30" placeholder="Confirm Password*"/>
+      </div>
+
+      {% if error_message %}
+        <p style="color:#ff0000"><strong><span class="req">*</span>{{ error_message }} </strong></p>
+      {% endif %}
+
+      <script type="text/javascript">
+        function Validate() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("password1").value;
+            if (password != confirmPassword) {
+              alert("Passwords do not match.");
+              return false;}
+            return true;}
+      </script>
+      <button type="submit" onclick="return Validate()" class="button button-block" />Get Started</button>
+      
+      </form>
+    </div> <!-- /form -->
+
+{% endblock %}

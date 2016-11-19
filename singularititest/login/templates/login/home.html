@@ -1,0 +1,15 @@
+{% extends 'login/base.html' %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+  
+<div class="form">
+  <div id="login">
+    <h1 style="margin-top:10%">You are in Home page</h1>
+    <ul class="tab-group" style="padding-left:33%">
+      <li class="tab active"><a href="{% url 'login' %}">Log In</a></li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
